@@ -1,0 +1,130 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ </div>
+ <mat-checkbox (click)="onclick(condition)">Check me!</mat-checkbox>
+ <div *ngIf="condition">
+      <h1>Welome to Angular meterial</h1>
+  </div><br><br>
+  <mat-radio-group value='1'>
+      <mat-radio-button value="1">Male</mat-radio-button>
+      <mat-radio-button value="2">Female</mat-radio-button>
+    </mat-radio-group>
+<br>
+<mat-form-field>
+  <mat-select placeholder="Favorite food">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+
+<mat-slider [vertical]="true"></mat-slider>
+<mat-slider></mat-slider>
+
+<mat-slider min="1" max="500" step="0.5" value="1.5"></mat-slider>
+<mat-slider invert></mat-slider>
+<mat-slider thumbLabel tickInterval="3"></mat-slider>
+<mat-slider step="4" tickInterval="3"></mat-slider>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
+
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary">
+          Primary
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent">
+          Accent
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn">
+          Warn
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="result">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <mat-slide-toggle
+        class="example-margin"
+        [color]="color"
+        [checked]="checked"
+        [disabled]="disabled">
+        Slide me!
+      </mat-slide-toggle>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Company (disabled)" disabled value="Google">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="First name">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="Long Last Name That Will Be Truncated">
+    </mat-form-field></td>
+  </tr></table>
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Address 2"></textarea>
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="City">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="State">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+    </mat-form-field></td>
+  </tr></table>
+</form>
