@@ -16,6 +16,8 @@ export class AppComponent {
       this.condition  = true;
     }
   };
+  panelOpenState: boolean = false;
+
   foods = [
     {value: 'steak-0', viewValue: 'Steak'},
     {value: 'pizza-1', viewValue: 'Pizza'},
